@@ -1,0 +1,47 @@
+<div class="tr-table container-xl">
+  <div class=”table-responsive”>
+    <div class=”table-wrapper”>
+      <div class=”table-title”>
+          <div class=”col-sm-6”>
+            <h4><b>View travel log</b></h4>
+          </div>
+          <div class="col-sm-6 add-button">
+            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              Back</a>
+          </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered table-content”">
+      <tbody>
+      <tr>
+        <td><label><b>Travel date</b></label></td>
+        <td><span>{{ travellogDetail.travelDate }}</span></td>
+      </tr>
+      <tr>
+        <td> <label><b>Vehicle registration number</b></label></td>
+        <td><span>{{ travellogDetail.vehicleRegistrationNumber }}</span></td>
+      </tr>
+      <tr>
+        <td> <label><b>Vehicle owner's name</b></label></td>
+        <td> <span>{{ travellogDetail.vehicleOwnerName }}</span></td>
+      </tr>
+      <tr>
+        <td><label><b>Odometer before</b></label> </td>
+        <td><span>{{ travellogDetail.odometerBefore }}</span></td>
+      </tr>
+      <tr>
+        <td> <label><b>Odometer after</b></label></td>
+        <td> <span>{{ travellogDetail.odometerAfter }}</span></td>
+      </tr>
+      <tr>
+        <td><label><b>Route</b></label></td>
+        <td><span>{{ travellogDetail.route }}</span></td>
+      </tr>
+      <tr>
+        <td><label><b>Description</b></label></td>
+        <td><span>{{ travellogDetail.description }}</span></td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>

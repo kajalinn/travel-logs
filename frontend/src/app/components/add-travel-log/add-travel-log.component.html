@@ -1,0 +1,124 @@
+<div class="tr-table container-xl">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h4><b>New travel log</b></h4>
+          </div>
+          <div class="col-sm-6">
+            <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+              Back</a>
+          </div>
+        </div>
+      </div>
+      <form #travelLogForm="ngForm">
+        <div class="table-content">
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="Date" class="p-t-b-10">Travel date<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" id="Date" required
+                     [(ngModel)]="addTravelLogForm.travelDate" name="Date" #Date="ngModel">
+              <div *ngIf="Date.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!Date.errors['required']">
+                  Travel date is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="vehicleRegistrationNumber" class="p-t-b-10">Vehicle registration number<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="vehicleRegistrationNumber" required maxlength="255"
+                     [(ngModel)]="addTravelLogForm.vehicleRegistrationNumber" name="vehicleRegistrationNumber" #vehicleRegistrationNumber="ngModel">
+              <div *ngIf="vehicleRegistrationNumber.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!vehicleRegistrationNumber.errors['required']">
+                  Vehicle registration number
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="vehicleOwnerName" class="p-t-b-10">Vehicle owner's name<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="vehicleOwnerName" required maxlength="255"
+                     [(ngModel)]="addTravelLogForm.vehicleOwnerName" name="vehicleOwnerName" #vehicleOwnerName="ngModel">
+              <div *ngIf="vehicleOwnerName.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!vehicleOwnerName.errors['required']">
+                  Vehicle owner's name
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="odometerBefore" class="p-t-b-10">Odometer before<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="odometerBefore" required maxlength="255"
+                     [(ngModel)]="addTravelLogForm.odometerBefore" name="odometerBefore" #odometerBefore="ngModel">
+              <div *ngIf="odometerBefore.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!odometerBefore.errors['required']">
+                  Odometer before is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="odometerAfter" class="p-t-b-10">Odometer after<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="odometerAfter" required maxlength="255"
+                     [(ngModel)]="addTravelLogForm.odometerAfter" name="odometerBefore" #odometerAfter="ngModel">
+              <div *ngIf="odometerAfter.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!odometerAfter.errors['required']">
+                  Odometer after is required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="route" class="p-t-b-10">Route<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="route" required maxlength="255"
+                     [(ngModel)]="addTravelLogForm.route" name="route" #route="ngModel">
+              <div *ngIf="route.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!route.errors['required']">
+                  Route is required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group p-10 row">
+            <div class="col-sm-3">
+              <label for="description" class="p-t-b-10">Description<span class="requiredStar">*</span></label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="description" required maxlength="255"
+                     [(ngModel)]="addTravelLogForm.description" name="description" #description="ngModel">
+              <div *ngIf="description.errors && isSubmitted" class="alert alert-danger validationError">
+                <div [hidden]="!description.errors['required']">
+                  Description is required
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="AddTravelLog(travelLogForm.form.valid)">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
