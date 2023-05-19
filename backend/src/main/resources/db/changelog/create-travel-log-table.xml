@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+  <changeSet id="01" author="Nikita">
+    <createTable tableName="TravelLog">
+      <column name="id" type="bigint" autoIncrement="true">
+        <constraints primaryKey="true"/>
+      </column>
+      <column name="travel_date" type="date"/>
+      <column name="vehicle_registration_number" type="varchar(20)"/>
+      <column name="vehicle_owner_name" type="varchar(100)"/>
+      <column name="odometer_before" type="bigint"/>
+      <column name="odometer_after" type="bigint"/>
+      <column name="route" type="varchar(100)"/>
+      <column name="description" type="text"/>
+    </createTable>
+  </changeSet>
+</databaseChangeLog>

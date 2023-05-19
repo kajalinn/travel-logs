@@ -1,0 +1,36 @@
+micronaut:
+  application:
+    name: backend
+  server:
+    cors:
+      enabled: true
+      single-header: true
+      config:
+        configurations:
+          web:
+            allowed-origins:
+              - http://localhost:4200
+            allowedMethods:
+              - POST
+              - PUT
+              - GET
+              - DELETE
+            allowedHeaders:
+              - Content-Type
+            exposedHeaders:
+              - Content-Type
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/travellogdb
+    driver-class-name: org.postgresql.Driver
+    db-type: postgres
+    username: postgres
+    password: postgres123
+netty:
+  default:
+    allocator:
+      max-order: 3
+liquibase:
+  datasources:
+    default:
+      change-log: classpath:db/liquibase-changelog.xml
