@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="02" author="Nikita">
+
+        <insert tableName="TravelLog">
+            <column name="id" value="100"/>
+            <column name="travel_date" value="2023-05-23"/>
+            <column name="vehicle_registration_number" value="ABC123"/>
+            <column name="vehicle_owner_name" value="John Doe"/>
+            <column name="odometer_before" value="10000"/>
+            <column name="odometer_after" value="11000"/>
+            <column name="route" value="City A to City B"/>
+            <column name="description" value="Test travel log 1"/>
+        </insert>
+
+        <insert tableName="TravelLog">
+            <column name="id" value="101"/>
+            <column name="travel_date" value="2023-05-24"/>
+            <column name="vehicle_registration_number" value="XYZ789"/>
+            <column name="vehicle_owner_name" value="Jane Smith"/>
+            <column name="odometer_before" value="20000"/>
+            <column name="odometer_after" value="20500"/>
+            <column name="route" value="City C to City D"/>
+            <column name="description" value="Test travel log 2"/>
+        </insert>
+
+        <insert tableName="TravelLog">
+            <column name="id" value="102"/>
+            <column name="travel_date" value="2023-05-25"/>
+            <column name="vehicle_registration_number" value="ABC123"/>
+            <column name="vehicle_owner_name" value="John Doe"/>
+            <column name="odometer_before" value="11000"/>
+            <column name="odometer_after" value="11800"/>
+            <column name="route" value="City B to City A"/>
+            <column name="description" value="Test travel log 3"/>
+        </insert>
+
+        <insert tableName="TravelLog">
+            <column name="id" value="103"/>
+            <column name="travel_date" value="2023-05-26"/>
+            <column name="vehicle_registration_number" value="XYZ789"/>
+            <column name="vehicle_owner_name" value="Jane Smith"/>
+            <column name="odometer_before" value="20500"/>
+            <column name="odometer_after" value="21000"/>
+            <column name="route" value="City D to City C"/>
+            <column name="description" value="Test travel log 4"/>
+        </insert>
+
+        <insert tableName="TravelLog">
+            <column name="id" value="104"/>
+            <column name="travel_date" value="2023-05-27"/>
+            <column name="vehicle_registration_number" value="ABC123"/>
+            <column name="vehicle_owner_name" value="John Doe"/>
+            <column name="odometer_before" value="11800"/>
+            <column name="odometer_after" value="12500"/>
+            <column name="route" value="City A to City B"/>
+            <column name="description" value="Test travel log 5"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
