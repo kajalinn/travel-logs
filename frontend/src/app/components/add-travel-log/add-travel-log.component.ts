@@ -19,6 +19,7 @@ export class AddTravelLogComponent implements OnInit {
 
   ngOnInit(): void {  }
 
+  //Saves new travel log
   AddTravelLog(isValid: any) {
     this.isSubmitted = true;
     if (isValid) {

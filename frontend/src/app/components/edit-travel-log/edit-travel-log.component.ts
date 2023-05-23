@@ -25,11 +25,14 @@ export class EditTravelLogComponent implements OnInit {
     this.logId = Number(this.route.snapshot.params['logId']);
     this.getTravelLogById();
   }
+
+  // Fetches the travel log by ID
   getTravelLogById() {
     this.httpProvider.getTravelLogById(this.logId).subscribe((data: any) => {
         if (data != null && data.body != null) {
           let resultData = data.body;
           if (resultData) {
+            // Assign fetched data to form fields
             this.editTravelLogForm.Id = this.logId;
             this.editTravelLogForm.travelDate = resultData.travelDate;
             this.editTravelLogForm.vehicleRegistrationNumber = resultData.vehicleRegistrationNumber;
@@ -44,21 +47,17 @@ export class EditTravelLogComponent implements OnInit {
       (error: any) => { });
   }
 
+  // Updates the travel log
   EditTravelLog(isValid: any) {
     this.isSubmitted = true;
     console.log('logId:', this.logId);
     if (isValid) {
-      console.log('editTravelLogForm:', this.editTravelLogForm);
       this.httpProvider.updateTravelLog(this.logId, this.editTravelLogForm).subscribe(async data => {
-        if(data){
-          console.log("TVOJA DATA", data);
-        } else {
-          console.log("huy tebe");
-        }
         if (data != null && data.body != null) {
             let resultData = data.body;
             if (resultData != null && resultData.isSuccess) {
               if (resultData != null && resultData.isSuccess) {
+                // Show success message and navigate to Home after a delay
                 this.toastr.success(resultData.message);
                 setTimeout(() => {
                   this.router.navigate(['/Home']);
@@ -68,6 +67,7 @@ export class EditTravelLogComponent implements OnInit {
           }
         },
         async error => {
+          // Show error message and navigate to Home after a delay
           this.toastr.error(error.message);
           setTimeout(() => {
             this.router.navigate(['/Home']);

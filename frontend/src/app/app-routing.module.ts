@@ -4,6 +4,7 @@ import {AddTravelLogComponent} from "./components/add-travel-log/add-travel-log.
 import {EditTravelLogComponent} from "./components/edit-travel-log/edit-travel-log.component";
 import {HomeComponent} from "./components/home/home.component";
 import {ViewTravelLogComponent} from "./components/view-travel-log/view-travel-log.component";
+import {GenerateReportComponent} from "./components/generate-report/generate-report.component";
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'ViewTravelLog/:logId', component: ViewTravelLogComponent },
   { path: 'AddTravelLog', component: AddTravelLogComponent },
-  { path: 'EditTravelLog/:logId', component: EditTravelLogComponent }
+  { path: 'EditTravelLog/:logId', component: EditTravelLogComponent },
+  { path: 'GenerateReport', component: GenerateReportComponent }
 ];
 
 @NgModule({

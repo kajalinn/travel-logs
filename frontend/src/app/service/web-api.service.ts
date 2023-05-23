@@ -7,11 +7,14 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+
+// Class with methods for making HTTP requests
 export class WebApiService {
+
+  //The constructor injects the HttpClient service, which is used for making HTTP requests.
   constructor(private httpClient: HttpClient) { }
 
-  // Get call method
-  // Param 1 : url
+  // Sends an HTTP GET request to the specified URL
   get(url: string): Observable<any> {
     return this.httpClient.get(
       url
@@ -22,9 +25,19 @@ export class WebApiService {
       );
   }
 
-  // Post call method
-  // Param 1 : url
-  // Param 2 : model
+  // Send an HTTP GET request to the specified URL with query parameters
+  getX(url: string, model: any): Observable<any> {
+    return this.httpClient.get(
+      url,
+      model
+    )
+      .pipe(
+        map((response: any) => this.ReturnResponseData(response)),
+        catchError(this.handleError)
+      );
+  }
+
+  // Send an HTTP POST request to the specified URL with the provided data
   post(url: string, model: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -41,9 +54,15 @@ export class WebApiService {
         catchError(this.handleError)
       );
   }
+
+
+  // Utility function to return the response data as-is
   private ReturnResponseData(response: any) {
     return response;
   }
+
+
+  // Error handling function to throw the error
   private handleError(error: any) {
     return throwError(error);
   }

@@ -1,0 +1,97 @@
+<div class="tr-table container-xl">
+  <div class="table-wrapper">
+    <div class="table-title">
+        <div class="col-sm-6">
+          <h4><b>Generate report</b></h4>
+        </div>
+        <div class="col-sm-6 back-button">
+          <a href="#" routerLink="/Home" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+            Back</a>
+        </div>
+    </div>
+    <form #reportForm="ngForm">
+      <div class="table-content">
+        <div class="form-group p-10 row">
+          <div class="col-sm-3">
+            <label for="startDate" class="p-t-b-10">Start date</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="startDate" required
+                   [(ngModel)]="generateReportForm.startDate" name="startDate" #Date="ngModel">
+          </div>
+        </div>
+        <div class="form-group p-10 row">
+          <div class="col-sm-3">
+            <label for="endDate" class="p-t-b-10">End date</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="date" class="form-control" id="endDate" required
+                   [(ngModel)]="generateReportForm.endDate" name="endDate" #Date="ngModel">
+          </div>
+        </div>
+
+        <div class="form-group p-10 row">
+          <div class="col-sm-3">
+            <label for="vehicleRegistrationNumber" class="p-t-b-10">Vehicle registration number</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="vehicleRegistrationNumber" required maxlength="255"
+                   [(ngModel)]="generateReportForm.vehicleRegistrationNumber" name="vehicleRegistrationNumber" #vehicleRegistrationNumber="ngModel">
+          </div>
+        </div>
+        <div class="form-group p-10 row">
+          <div class="col-sm-3">
+            <label for="vehicleOwnerName" class="p-t-b-10">Vehicle owner's name</label>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="vehicleOwnerName" required maxlength="255"
+                   [(ngModel)]="generateReportForm.vehicleOwnerName" name="vehicleOwnerName" #vehicleOwnerName="ngModel">
+          </div>
+        </div>
+        <div class="table-footer">
+          <button class="btn btn-success" (click)="GenerateReport(reportForm.valid)">Generate report</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <table class="table table-striped table-hover table-bordered table-content">
+    <thead>
+    <tr class="center-align">
+      <th>Travel date</th>
+      <th>Vehicle reg. number</th>
+      <th>Vehicle owner</th>
+      <th>Odometer before</th>
+      <th>Odometer after</th>
+      <th>Route</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let travellog of travelLogList" class="center-align">
+      <td>{{ travellog.travelDate }}</td>
+      <td>{{ travellog.vehicleRegistrationNumber }}</td>
+      <td>{{ travellog.vehicleOwnerName }}</td>
+      <td>{{ travellog.odometerBefore }}</td>
+      <td>{{ travellog.odometerAfter }}</td>
+      <td>{{ travellog.route }}</td>
+      <td>{{ travellog.description }}</td>
+    </tr>
+    <tr>
+      <td *ngIf="travelLogList.length == 0" colspan="9">No travel logs Found</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

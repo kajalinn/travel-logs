@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+.tr-table{
+  margin-top: 200px;
+}
+.table-title{
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  background: #774181;
+}
+
+.col-sm-6{
+  display: flex;
+  align-items: center;
+  padding: 0 36px;
+  b{
+    color: white;
+  }
+}
+
+.back-button{
+  justify-content: end;
+}
+
+.form-group{
+  padding: 20px;
+}
+.table-footer{
+  padding: 36px 0;
+  display: grid;
+}

@@ -1,13 +1,12 @@
 package com.kodalitytest.travellog;
+
 import io.micronaut.data.annotation.GeneratedValue;
 import io.micronaut.data.annotation.Id;
 import java.time.LocalDate;
 
 import io.micronaut.core.annotation.Introspected;
 
-
-
-//TravelLog Model
+//Travel Log Model
 @Introspected
 public class TravelLog {
     @Id

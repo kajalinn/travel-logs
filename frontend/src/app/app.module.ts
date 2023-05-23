@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http'
 import {FormsModule} from "@angular/forms";
+import { GenerateReportComponent } from './components/generate-report/generate-report.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
     AddTravelLogComponent,
     EditTravelLogComponent,
     ViewTravelLogComponent,
-    NgModalConfirm
+    NgModalConfirm,
+    GenerateReportComponent
   ],
   imports: [
     BrowserModule,

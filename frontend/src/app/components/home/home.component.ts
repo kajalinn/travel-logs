@@ -7,6 +7,8 @@ import { ToastrService } from 'ngx-toastr';
 import {HttpProviderService} from "../../service/http-provider.service";
 import {travelLogForm} from "../add-travel-log/add-travel-log.component";
 
+
+//Delete confirmation modal window
 @Component({
   selector: 'ng-modal-confirm',
   template: `
@@ -45,10 +47,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAllTravelLogs();
   }
+
+  // Retrieves all travel logs
   async getAllTravelLogs() {
     this.httpProvider.getAllTravelLogs().subscribe({
       next: (data: any) => {
-        console.log("Home component data ->", data);
         if(data){
           this.travelLogList = data;
         }
@@ -65,10 +68,17 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // Redirects to the "AddTravelLog" page
   AddTravelLog() {
     this.router.navigate(['AddTravelLog']);
   }
 
+  // Redirects to the "GenerateReport" page
+  GenerateReport(){
+    this.router.navigate(['GenerateReport']);
+  }
+
+  // Opens the delete confirmation modal
   deleteTravelLogConfirmation(travellog: any) {
     this.modalService.open(MODALS['deleteModal'],
       {
@@ -79,6 +89,7 @@ export class HomeComponent implements OnInit {
       (reason: any) => {});
   }
 
+  // Deletes a travel log
   deleteTravelLog(travellog: any) {
     this.httpProvider.deleteTravelLogById(travellog.id).subscribe((data : any) => {
         if (data != null && data.body != null) {

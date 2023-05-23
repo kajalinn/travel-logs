@@ -21,6 +21,7 @@ export class ViewTravelLogComponent implements OnInit {
     this.getTravelLogById();
   }
 
+  // Fetches the travel log by ID
   getTravelLogById() {
     this.httpProvider.getTravelLogById(this.logId).subscribe((data : any) => {
       if(data){

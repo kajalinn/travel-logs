@@ -4,13 +4,13 @@ import io.micronaut.context.annotation.Bean;
 import io.micronaut.context.annotation.Factory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
+import javax.sql.DataSource; //Represents a database connection source
 
-@Factory
+@Factory //The @Factory annotation marks this class as a factory, indicating that it will create and configure beans.
 public class JdbcTemplateFactory {
 
-    @Bean
+    @Bean //This method creates and configures a bean.
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
+        return new JdbcTemplate(dataSource); //returns a new instance of JdbcTemplate
     }
 }

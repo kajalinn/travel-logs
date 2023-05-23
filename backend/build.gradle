@@ -4,6 +4,8 @@ plugins {
     id("io.micronaut.test-resources") version "3.7.9"
 }
 
+
+
 version = "0.1"
 group = "com.kodalitytest"
 
@@ -55,6 +57,7 @@ micronaut {
         additionalModules.add("jdbc-postgresql")
     }
 }
+
 
 
 
